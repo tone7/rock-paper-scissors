@@ -4,13 +4,36 @@
         <link rel="stylesheet" href="style.css" type="text/css">
 
         <title>Rock Paper Scissors</title>
-        <meta charset="UTF-8"/>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
         <h1>You against the machine</h1>
-        <img src="usage/rock-png.png"/>
-        <img src="usage/paper-png.png"/>
-        <img src="usage/scissors-png.jpg"/>
+        <div class="container">
+            <div class="rock" onclick="rock()">
+                <img id ="rock-img" src="usage/rock-png.png"/>
+                <div class="middle">
+                    <p id ="rock-text">Rock</p>
+                </div>
+            </div>
+            <div class="paper" onclick="paper()">
+                <img id="paper-img" src="usage/paper-png.png"/>
+                <div class="middle">
+                    <p id="paper-text">Paper</p>
+                </div>
+            </div>
+            <div class="scissors" onclick="scissors()">
+                <img id="scissors-img" src="usage/scissors-png.jpg"/>
+                <div class="middle">
+                    <p id="scissors-text">Scissors</p>
+                </div>
+            </div>               
+        </div>    
+        <div class="container2">
+            <p id="round">Round 0</p>
+            <p id="result">Lets Go!</p>
+            <p id="score">0 : 0</p>
+            <p id="end"></p>
+        </div>   
         <script src="script.js"></script>
     </body>
 </html>

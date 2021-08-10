@@ -1,3 +1,7 @@
+let round = 0;
+let playerScore = 0;
+let computerScore = 0;
+
 function computerPlay(){
     let choice;
     let number = Math.floor(Math.random()*3);
@@ -97,4 +101,112 @@ function playRound(playerSelection, computerSelection, round){
     }
 }
 
-game();
+function rock(){
+    round++;
+    document.getElementById("round").innerHTML = `Round ${round}`;
+    let choice = computerPlay();
+    switch(choice){
+        case "Rock": document.getElementById("result").innerHTML = `Tie! Both picked ${choice}`;
+        break;
+        case "Paper": document.getElementById("result").innerHTML = `You Lose! ${choice} beats Rock`;
+        computerScore++;
+        document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        if(computerScore == 5){
+            document.getElementById("end").innerHTML = "You lost the entire game :(";
+            computerScore = 0;
+            playerScore = 0;
+            round = 0;
+            document.getElementById("result").innerHTML = `Lets Go!`;
+            document.getElementById("round").innerHTML = `Round ${round}`;
+            document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        }
+        break;
+        case "Scissors": document.getElementById("result").innerHTML = `You Won! Rock beats ${choice}`;
+        playerScore++;
+        document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        if(playerScore == 5){
+            document.getElementById("end").innerHTML = "You won the entire game :)";
+            computerScore = 0;
+            playerScore = 0;
+            round = 0;
+            document.getElementById("result").innerHTML = `Lets Go!`;
+            document.getElementById("round").innerHTML = `Round ${round}`;
+            document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        }
+        break;
+    }
+}
+
+function paper(){
+    round++;
+    document.getElementById("round").innerHTML = `Round ${round}`;
+    let choice = computerPlay();
+    switch(choice){
+        case "Paper": document.getElementById("result").innerHTML = `Tie! Both picked ${choice}`;
+        break;
+        case "Scissors": document.getElementById("result").innerHTML = `You Lose! ${choice} beats Paper`;
+        computerScore++;
+        document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        if(computerScore == 5){
+            document.getElementById("end").innerHTML = "You lost the entire game :(";
+            computerScore = 0;
+            playerScore = 0;
+            round = 0;
+            document.getElementById("result").innerHTML = `Lets Go!`;
+            document.getElementById("round").innerHTML = `Round ${round}`;
+            document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        }
+        break;
+        case "Rock": document.getElementById("result").innerHTML = `You Won! Paper beats ${choice}`;
+        playerScore++;
+        document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        if(playerScore == 5){
+            document.getElementById("end").innerHTML = "You won the entire game :)";
+            computerScore = 0;
+            playerScore = 0;
+            round = 0;
+            document.getElementById("result").innerHTML = `Lets Go!`;
+            document.getElementById("round").innerHTML = `Round ${round}`;
+            document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        }
+        break;
+    }
+}
+
+function scissors(){
+    round++;
+    document.getElementById("round").innerHTML = `Round ${round}`;
+    let choice = computerPlay();
+    switch(choice){
+        case "Scissors": document.getElementById("result").innerHTML = `Tie! Both picked ${choice}`;
+        break;
+        case "Rock": document.getElementById("result").innerHTML = `You Lose! ${choice} beats Scissors`;
+        computerScore++;
+        document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        if(computerScore == 5){
+            document.getElementById("end").innerHTML = "You lost the entire game :(";
+            computerScore = 0;
+            playerScore = 0;
+            round = 0;
+            document.getElementById("result").innerHTML = `Lets Go!`;
+            document.getElementById("round").innerHTML = `Round ${round}`;
+            document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        }
+        break;
+        case "Paper": document.getElementById("result").innerHTML = `You Won! Scissors beats ${choice}`;
+        playerScore++;
+        document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        if(playerScore == 5){
+            document.getElementById("end").innerHTML = "You won the entire game :)";
+            computerScore = 0;
+            playerScore = 0;
+            round = 0;
+            document.getElementById("result").innerHTML = `Lets Go!`;
+            document.getElementById("round").innerHTML = `Round ${round}`;
+            document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+        }
+        break;
+    }
+}
+
+//game();

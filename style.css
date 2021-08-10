@@ -1,8 +1,74 @@
-img {
-    height: 100px;
-    width: auto;
+.container {
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
 }
 
-img:hover{
-    box-shadow: 3px;
+.rock{
+    text-align: center;
+    padding: 10px;
 }
+  
+.paper{
+    text-align: center;
+    padding: 10px;
+}
+
+.scissors{
+    text-align: center;
+    padding: 10px;
+}
+
+.rock:hover{
+    text-decoration: underline;
+    opacity: 0.3;
+}
+
+.paper:hover{
+    text-decoration: underline;
+    opacity: 0.3;
+}
+
+.scissors:hover{
+    text-decoration: underline;
+    opacity: 0.3;
+}
+
+#rock-img {
+    opacity: 1;
+    display: block;
+    width: auto;
+    height: 100px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+#paper-img {
+    opacity: 1;
+    display: block;
+    width: auto;
+    height: 100px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+#scissors-img {
+    opacity: 1;
+    display: block;
+    width: auto;
+    height: 100px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+  
+
+  
+.container:hover #rock-img #paper-img #scissors-img{
+    opacity: 0.3;
+}
+  
+.container:hover .middle {
+    opacity: 1;
+}
+  
