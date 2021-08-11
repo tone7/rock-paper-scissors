@@ -112,7 +112,7 @@ function rock(){
         computerScore++;
         document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
         if(computerScore == 5){
-            document.getElementById("end").innerHTML = "You lost the entire game :(";
+            alert(`You lost the entire game ${computerScore} : ${playerScore}  :(`);
             computerScore = 0;
             playerScore = 0;
             round = 0;
@@ -125,7 +125,7 @@ function rock(){
         playerScore++;
         document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
         if(playerScore == 5){
-            document.getElementById("end").innerHTML = "You won the entire game :)";
+            alert(`You won the entire game ${playerScore} : ${computerScore}  :)`);
             computerScore = 0;
             playerScore = 0;
             round = 0;
@@ -148,7 +148,7 @@ function paper(){
         computerScore++;
         document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
         if(computerScore == 5){
-            document.getElementById("end").innerHTML = "You lost the entire game :(";
+            alert(`You lost the entire game ${computerScore} : ${playerScore}  :(`);
             computerScore = 0;
             playerScore = 0;
             round = 0;
@@ -161,7 +161,7 @@ function paper(){
         playerScore++;
         document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
         if(playerScore == 5){
-            document.getElementById("end").innerHTML = "You won the entire game :)";
+            alert(`You won the entire game ${playerScore} : ${computerScore}  :)`);
             computerScore = 0;
             playerScore = 0;
             round = 0;
@@ -184,20 +184,17 @@ function scissors(){
         computerScore++;
         document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
         if(computerScore == 5){
-            document.getElementById("end").innerHTML = "You lost the entire game :(";
+            alert(`You lost the entire game ${computerScore} : ${playerScore}  :(`);
             computerScore = 0;
             playerScore = 0;
-            round = 0;
-            document.getElementById("result").innerHTML = `Lets Go!`;
-            document.getElementById("round").innerHTML = `Round ${round}`;
-            document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
+            round = 0; 
         }
         break;
         case "Paper": document.getElementById("result").innerHTML = `You Won! Scissors beats ${choice}`;
         playerScore++;
         document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`; 
         if(playerScore == 5){
-            document.getElementById("end").innerHTML = "You won the entire game :)";
+            alert(`You won the entire game ${playerScore} : ${computerScore}  :)`);
             computerScore = 0;
             playerScore = 0;
             round = 0;
@@ -207,6 +204,22 @@ function scissors(){
         }
         break;
     }
+}
+
+function clickStartButtonListener(){
+    document.getElementById("startGame").style.display="none";
+    document.getElementById("newGame").style.display="flex";
+    document.getElementById("container").style.display="flex";
+    document.getElementById("container2").style.display="flex";
+}
+
+function clickNewButtonListener(){
+    document.getElementById("result").innerHTML = `Lets Go!`;
+    round = 0;
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById("round").innerHTML = `Round ${round}`;
+    document.getElementById("score").innerHTML = `${playerScore} : ${computerScore}`;
 }
 
 //game();

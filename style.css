@@ -1,8 +1,46 @@
-.container {
+@font-face {
+    font-family: BigSpace;
+    src: url(usage/BigSpace-rPKx.ttf);
+}
+
+@font-face {
+    font-family: EvilEmpire;
+    src: url(usage/EvilEmpire-4BBVK.ttf);
+}
+
+body {
+    background-color: rgb(92, 206, 181);
+}
+
+h1{
+    font-family: EvilEmpire;
+}
+
+.screen{
+    align-items: center;
     position: relative;
     width: 50%;
     display: flex;
+    flex-direction: column;
+    font-family: EvilEmpire;
+}
+
+#container {
+    align-items: center;
+    position: relative;
+    width: 50%;
+    display: none;
     flex-direction: row;
+    font-family: EvilEmpire;
+}
+
+#container2 {
+    align-items: center;
+    position: relative;
+    width: 50%;
+    display: none;
+    flex-direction: column;
+    font-family: EvilEmpire;
 }
 
 .rock{
@@ -62,13 +100,19 @@
     backface-visibility: hidden;
 }
   
-
-  
 .container:hover #rock-img #paper-img #scissors-img{
     opacity: 0.3;
 }
-  
-.container:hover .middle {
-    opacity: 1;
+
+button {
+    width: 100px;
+    height: auto;
+    font-family: BigSpace;
+    text-align: center;
 }
+
+#newGame{
+    display: none;
+}
+
   

@@ -7,28 +7,32 @@
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
-        <h1>You against the machine</h1>
-        <div class="container">
-            <div class="rock" onclick="rock()">
-                <img id ="rock-img" src="usage/rock-png.png"/>
-                <div class="middle">
-                    <p id ="rock-text">Rock</p>
+        <div class="screen">
+            <h1>You against the machine</h1>
+            <button type="button" id="startGame" onclick="clickStartButtonListener()">Start Game</button>
+            <button type="button" id="newGame" onclick="clickNewButtonListener()">New Game</button>
+            <div id="container">
+                <div class="rock" onclick="rock()">
+                    <img id ="rock-img" src="usage/rock-png.png"/>
+                    <div class="middle">
+                        <p id ="rock-text">Rock</p>
+                    </div>
                 </div>
-            </div>
-            <div class="paper" onclick="paper()">
-                <img id="paper-img" src="usage/paper-png.png"/>
-                <div class="middle">
-                    <p id="paper-text">Paper</p>
+                <div class="paper" onclick="paper()">
+                    <img id="paper-img" src="usage/paper-png.png"/>
+                    <div class="middle">
+                        <p id="paper-text">Paper</p>
+                    </div>
                 </div>
-            </div>
-            <div class="scissors" onclick="scissors()">
-                <img id="scissors-img" src="usage/scissors-png.jpg"/>
-                <div class="middle">
-                    <p id="scissors-text">Scissors</p>
-                </div>
-            </div>               
-        </div>    
-        <div class="container2">
+                <div class="scissors" onclick="scissors()">
+                    <img id="scissors-img" src="usage/scissors-png.jpg"/>
+                    <div class="middle">
+                        <p id="scissors-text">Scissors</p>
+                    </div>
+                </div>               
+            </div>  
+        </div>  
+        <div id="container2">
             <p id="round">Round 0</p>
             <p id="result">Lets Go!</p>
             <p id="score">0 : 0</p>
